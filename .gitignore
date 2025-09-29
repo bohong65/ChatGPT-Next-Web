@@ -49,3 +49,15 @@ masks.json
 
 # mcp config
 app/mcp/mcp_config.json
+
+# Trading framework specific
+trading_framework/logs/
+trading_framework/data/
+trading_framework/.env
+*.db
+*.sqlite
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
