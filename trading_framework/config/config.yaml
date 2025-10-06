@@ -1,0 +1,61 @@
+# Trading Framework Configuration
+
+# XTData API Configuration
+xtdata:
+  base_url: "https://api.xtdata.com"
+  api_key: null  # Set via environment variable XTDATA_API_KEY
+  timeout: 30
+  max_retries: 3
+
+# XTTrader API Configuration  
+xttrader:
+  base_url: "https://api.xttrader.com"
+  api_key: null      # Set via environment variable XTTRADER_API_KEY
+  secret_key: null   # Set via environment variable XTTRADER_SECRET_KEY
+  timeout: 30
+  max_retries: 3
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {name} | {message}"
+  file: "logs/trading_framework.log"
+  max_file_size: "10 MB"
+  retention: "30 days"
+
+# Database Configuration
+database:
+  type: "sqlite"
+  path: "data/trading_framework.db"
+  backup_enabled: true
+  backup_interval: "1 day"
+
+# Risk Management Settings
+risk_management:
+  max_position_size: 0.1      # 10% of portfolio per position
+  max_daily_loss: 0.02        # 2% daily loss limit
+  max_drawdown: 0.1           # 10% maximum drawdown
+  stop_loss_default: 0.02     # 2% default stop loss
+  take_profit_default: 0.04   # 4% default take profit
+
+# Backtesting Configuration
+backtesting:
+  initial_capital: 100000
+  commission: 0.001           # 0.1% commission
+  slippage: 0.0005           # 0.05% slippage
+  benchmark_symbol: "SPY"
+
+# Notification Settings
+notifications:
+  enabled: true
+  email:
+    enabled: false
+    smtp_server: null
+    smtp_port: 587
+    username: null
+    password: null
+    to_addresses: []
+  webhook:
+    enabled: false
+    url: null
+    timeout: 10
